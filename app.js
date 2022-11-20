@@ -2,7 +2,7 @@ const express=require("express");
 const bodyparser=require("body-parser");
 const app=express();
 const mongoose=require('mongoose');
-mongoose.connect("mongodb://localhost:27017/todolistDB");
+mongoose.connect("mongodb+srv://admin-Nipun:Nipun123@cluster0.wtxilhe.mongodb.net/todolistDB");
 const date=require(__dirname+"/date.js")
 const _=require('lodash');
 const itemsSchema=new mongoose.Schema({
@@ -176,4 +176,4 @@ app.post("/delete",(req,res)=>
 });
 
 const port=process.env.PORT;
-app.listen(port,()=>{console.log("Server has started.");})
+app.listen(port || 3000,()=>{console.log("Server has started.");})
