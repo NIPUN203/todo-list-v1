@@ -1,0 +1,32 @@
+<%- include('header') -%>
+
+    <div class="box" id="heading">
+
+    <h1><%= List_title %></h1>
+  </div>
+  <div class="box">
+
+        <%new_items.forEach((i)=> {%>
+
+        <div class="item">
+
+          <form class="check" action="/delete" method="post">
+          <input type="checkbox" name="checkbox" value="<%=i._id%>" onChange="this.form.submit()">
+          <p><%=i.Name%></p>
+          <input type="hidden" name="listname" value="<%=List_title%>">
+        </form>
+
+      </div>
+    <%});%> <!-- these are for writing a js code into an html. -->
+
+
+
+    <form  class="item" action="/" method="post">
+      <input type="text" name="add" placeholder="New Item" >
+      <button type="submit" name="list" value= "<%= List_title %>" > +</button>
+      <!-- // we put the list_title into "" so as to pass it at a string; -->
+    </form>
+
+  </div>
+
+<%- include('footer')-%>
