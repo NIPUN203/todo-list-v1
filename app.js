@@ -175,5 +175,5 @@ app.post("/delete",(req,res)=>
 
 });
 
-
-app.listen(3000,()=>{console.log("Server has started.");})
+const port=process.env.PORT;
+app.listen(port,()=>{console.log("Server has started.");})
